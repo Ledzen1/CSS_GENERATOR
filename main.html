@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <div class="menu-container">
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Size
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+
+                                    <div class="width-settings">
+
+                                        <label for="widthRange" class="form-label">Width</label>
+                                        <input type="range" class="form-range" id="widthRange" min="100" max="500">
+                                        <input value="100" type="number" class="form-control" id="widthInput" min="100"
+                                            max="500">
+                                    </div>
+
+
+                                    <div class="heigt-settings">
+
+                                        <label for="heightRange" class="form-label">Height</label>
+                                        <input type="range" class="form-range" id="heightRange" min="100" max="500">
+                                        <input value="100" type="number" class="form-control" id="heightInput" min="100"
+                                            max="500">
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    RGB
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p id="valueR">50</p>
+                                    <input type="range" id="rangeSizeR" value="50" min="0" max="255">
+                                    <p id="valueG">50</p>
+                                    <input type="range" id="rangeSizeG" value="50" min="0" max="255">
+                                    <p id="valueB">50 </p>
+                                    <input type="range" id="rangeSizeB" value="50" min="0" max="255">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Border Radius
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+
+                                    <div class="containerForRadius">
+                                        <div class="textValues">
+                                            <span>Top left: </span>
+                                            <span style="margin-top: 20px;">Top Right: </span>
+                                            <span style="margin-top: 15px;">Bottom Right: </span>
+                                            <span style="margin-top: 15px;">Bottom left: </span>
+                                        </div>
+                                        <div class="inputValuesRadius">
+                                            <div class="topLeft">
+                                                <input type="text" name="inputForRadius" id="topLeftInput" value="0">
+                                            </div>
+                                            <div class="topRight">
+                                                <input type="text" name="inputForRadius" id="topRightInput" value="0">
+                                            </div>
+                                            <div class="bottomRight">
+                                                <input type="text" name="inputForRadius" id="bottomLeftInput" value="0">
+                                            </div>
+                                            <div class="bottomLeft">
+                                                <input type="text" name="inputForRadius" id="bottomRightInput"
+                                                    value="0">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" onclick="toggleAccordion(this)">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        Flex-box
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+
+                                        <div class="containerForAcorFlex">
+                                            <div class="propertyNames">
+                                                <p>Flex Display:</p>
+                                                <p>Flex Direction:</p>
+                                                <p>Flex Wrap:</p>
+                                                <p>Justify Content:</p>
+                                                <p>Align Items:</p>
+                                                <p>Align Content:</p>
+
+
+
+                                            </div>
+                                            <div class="propertyValues">
+                                                <label for="choiseForFlexDisplay"></label>
+                                                <select name="choises" id="choiseForFlexDisplay">
+                                                    <option value="flex" id="flex-val">Flex</option>
+                                                    <option value="inline-flex" id="inlineFlex-val">Inline Flex</option>
+                                                </select>
+
+
+                                                <label for="choiseForFlexDirection"></label>
+                                                <select name="choises" id="choiseForFlexDirection">
+                                                    <option value="row" id="row-val">Row</option>
+                                                    <option value="row-reverse" id="row-reverse-val">Row-Reverse
+                                                    </option>
+                                                    <option value="column" id="column-val">Column</option>
+                                                    <option value="column-reverse" id="column-reverse-val">Column
+                                                        Reverse</option>
+                                                </select>
+
+                                                <label for="choiseForFlexWrap"></label>
+                                                <select name="choises" id="choiseForFlexWrap">
+                                                    <option value="wrap" id="wrap-val">Wrap</option>
+                                                    <option value="nowrap" id="nowrap-val">No-Wrap</option>
+                                                    <option value="wrap-reverse" id="wrap-reverse-val">Wrap-Reverse
+                                                    </option>
+                                                </select>
+
+                                                <label for="choiseForJustifyContent"></label>
+                                                <select name="choises" id="choiseForJustifyContent">
+                                                    <option value="start" id="start-val">Flex-start</option>
+                                                    <option value="end" id="end-val">Flex-End</option>
+                                                    <option value="center" id="center-val">Center</option>
+                                                    <option value="space-between" id="space-between-val">Space between
+                                                    </option>
+                                                    <option value="space-around" id="space-around-val">Space Around
+                                                    </option>
+                                                </select>
+
+                                                <label for="choiseForAlignItems"></label>
+                                                <select name="choises" id="choiseForAlignItems">
+                                                    <option value="start" id="align-start-val">Flex-start</option>
+                                                    <option value="flex-end" id="align-end-val">Flex-End</option>
+                                                    <option value="center" id="align-center-val">Center</option>
+                                                    <option value="baseline" id="align-baseline-val">Baseline</option>
+                                                    <option value="stretch" id="align-stretch-val">Stretch</option>
+                                                </select>
+
+                                                <label for="choiseForAlignContent"></label>
+                                                <select name="choises" id="choiseForAlignContent">
+                                                    <option value="start" id="content-start-val">Flex-start</option>
+                                                    <option value="end" id="content-end-val">Flex-End</option>
+                                                    <option value="space-between" id="content-spacebetween-val">Space
+                                                        Between</option>
+                                                    <option value="space-around" id="content-spacearound">Space Around
+                                                    </option>
+                                                    <option value="stretch" id="content-stretch-val">Stretch</option>
+                                                </select>
+
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- П'ятий акордеон -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        Box Shadow
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="containerForShadowContent">
+                                            <div class="propertyShadowNames">
+                                                <p id="p1" style="margin-top: -10px;"> Inset:                                                 
+                                                    <label for="choiseForShadowInset" style="margin-left: 10px;"></label>
+                                                    <select name="abc" id="choiseForShadowInset">
+                                                        <option value="no" id="insetnoval">No</option>
+                                                        <option value="inset" id="insetval">Inset</option>
+                                                    </select>
+                                                </p>
+                                                <p id="p2">Horizontal Length:
+                                                    <input type="text" id="horizontalLength" style="width: 50px; margin-left: 10px;"><i style="color: rgb(23, 23, 19);">px</i>
+                                                </p>
+                                                <p id="p3">Vertical Length:
+                                                    <input type="text" id="verticalLength" style="width: 50px; margin-left: 32px;"><i style="color: rgb(23, 23, 19);">px</i>
+                                                </p>
+                                                <p id="p4">Blur Radius:
+                                                    <input type="text" id="blurRadius" style="width: 50px; margin-left: 58px;"><i style="color: rgb(23, 23, 19);">px</i>
+                                                </p>
+                                                <p id="p5">Spread:
+                                                    <input type="text" id="spread" style="width: 50px; margin-left: 88px;"><i style="color: rgb(23, 23, 19);">px</i>
+                                                </p>
+                                                <p id="p7">RGBA Color:
+                                                    <input type="color" id="head" name="head" value="#e66465" style="margin-left: 55px;"/>
+                                                </p>
+                                                <p id="outPurRGBAShadow"></p>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7 ">
+
+                <div class="box-container">
+                    <div class="box" id="box">
+
+                    </div>
+                </div>
+
+                <div class="container-flexbox"
+                    style="  height: 450px; background-color: gray; display: flex; display: none;">
+                    <div class="box-flexbox"
+                        style="width: 50px; height: 50px; background-color: bisque; margin: 10px; display: flex; align-content: center; justify-content: center;">
+                        1</div>
+                    <div class="box-flexbox"
+                        style="width: 75px; height: 75px; background-color: rgb(208, 165, 113); margin: 10px; display: flex; align-content: center; justify-content: center;">
+                        2</div>
+                    <div class="box-flexbox"
+                        style="width: 100px; height: 100px; background-color: rgb(167, 106, 33);margin: 10px; display: flex; align-content: center; justify-content: center;">
+                        3</div>
+                    <div class="box-flexbox"
+                        style="width: 125px; height: 125px; background-color: rgb(89, 57, 19); margin: 10px; display: flex; align-content: center; justify-content: center;">
+                        4</div>
+                    <div class="box-flexbox"
+                        style="width: 150px; height: 150px; background-color: rgb(71, 41, 5); margin: 10px; display: flex; align-content: center; justify-content: center;">
+                        5</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 ">
+                <div class="mb-3">
+                    <label for="outputCode" class="form-label" style="width: 1050px;"> </label>
+                    <textarea class="form-control" id="outputCode" rows="3"></textarea>
+
+                </div>
+            </div>
+            <div class="col-2">
+                <button type="button" id="btnCopy" class="btn btn-success">Copy code</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
